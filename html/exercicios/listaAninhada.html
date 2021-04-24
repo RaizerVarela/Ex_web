@@ -1,0 +1,40 @@
+<h1>Lista Aninhada</h1>
+
+<!-- Lista Aninhada NÃO ESTÁ FUNCIONANDO-->
+<h2>Categorias dos produtos</h2>
+<ul>
+    <li>
+        <span class="oculta">Alimentos</span>
+        <ul>
+            <li>Arroz</li>
+            <li>Feijão</li>
+            <li>Macarrão</li>
+        </ul>
+    </li>
+    <li>
+        <span class="oculta">Bebidas</span>
+        <ul>
+            <li>Cerveja</li>
+            <li>Guarana</li>
+            <li>Suco</li>
+        </ul>
+    </li>
+    <li>
+        <span class="oculta">Ropas</span>
+        <ul>
+            <li>Camisa</li>
+            <li>Saia</li>
+            <li>Bermuda</li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    document.querySelectorAll("oculta").forEach(categoria => {
+        categoria.onClick = function(e){
+            const ul = categoria.nextElementSibling
+            const d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+</script>
