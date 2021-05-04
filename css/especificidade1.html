@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        .observacao{
+            background-color: green!important; /*Note que não vai gerar diferença,
+            pois estamos tratando de propriedades distintas(backgound-color e 
+            backgroup)*/
+            border: dashed 5px;
+            padding: 20px;
+            font-size: 40px;
+        }
+        p{
+            background-color: gray;
+        } /*Note que a cor cinza não foi aplicada por conta da regra de
+        especificidade, onde a classe vai ter prioridade sobre a tag, 
+        não importando se foi lida antes ou depois.*/
+        p.observacao{
+            padding: 2px;
+            background: linear-gradient(to right, red, yellow);
+        }/*Já quando você associa uma classe diretamente de uma tag, ela será
+        mais especifica do que apenas a classe*/
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>
