@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://specificity.keegan.st/ */
+        div[wm-cor]{
+            background-color: darkorange;
+        }/*Note que quando se tem um atributo você tem um nivel de especificidade
+        maior*/
+        body{
+            font-size: 40px;
+        }
+        div{
+            background-color: #00B;
+            color: #fff;
+        }
+        div:hover{
+            background-color: purple;
+        } /*Note agora que o hover foi aplicado em todos, mas ele tem a mesma
+        especificidade que o atributo div[wm-cor], então o que vai definir a 
+        aplicação ou não do estilo, vai ser a ordem*/
+        div.estilo{
+            background-color: green;
+        }/*Note agora que o nivel de especificidade é o mesmo de uma div:hover
+        então quem for aplicado por ultimo vence*/
+        #unico1, #unico2{
+            background-color: black;
+        }/*Note agora que o ID tem preferencia sobre os outros, intependente 
+        da ordem*/
+
+        /*MUITO IMPORTANTE!!! CASO VOCÊ TENHA UM ESTILO INLINE, ELE VAI GANHAR DE
+        TODOS OS OUTROS*/
+    </style>
+</head>
+
+<body>
+    <div id="unico1" class="estilo">
+        #unico1 vs .estilo vs inline
+    </div>
+    <div id="unico2" class="estilo">#unico2 vs .estilo</div>
+    <div class="estilo" wm-cor>.estilo vs wm-cor</div>
+    <div wm-cor>wm-cor</div>
+    <div class="estilo">.estilo</div>
+    <div>elemento</div>
+</body>
+
+</html>
