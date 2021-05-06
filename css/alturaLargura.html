@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        body {
+            font-size: 40px;
+            background-color: coral;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        span, div{
+            width: 50%;/*Esse elemento irá funcionar, pois esta dentro de
+            um body, onde por padrão ele ocupa a largura toda*/
+            height: 50%;/*Esse elemento não vai funcionar, pois ele esta
+            diretamente dentro do body, e por padrão o body não ocupa
+            a altura toda*/
+            height: 250px;/*Então para resolver o problema de altura, basta
+            usar uma unidade absoluta, pois assim o body irá aumentar de 
+            tamanho também.*/
+        }
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+</body>
+
+</html>
